@@ -23,6 +23,14 @@ class Bank_Account{
          balance += a;
          return to_string(a) + " will be deposited.";
       }
+
+
+      std::string to_string(float value, int decimals = 6) {
+          char buffer[32];
+          sprintf_s(buffer, sizeof(buffer), "%.*f", decimals, value);
+          return std::string(buffer);
+      }
+
    
       string withdraw(float a){//Withdraws money from bank account instance
             balance -= a;
